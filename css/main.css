@@ -1,0 +1,97 @@
+/*------------------------------------
+* modified from sext
+*
+* @author linghua.zhang@me.com
+* @link http://lhzhang.com/
+* @update 2011-12-20
+*
+* |/ | (~ (~
+* |\.|._)._)
+* --------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Galdeano');
+body{font-size:14px;font-family:Arial,sans-serif;color:#000000;background-color:#ffffff;}
+*{padding:0;margin: 0;outline:none;}
+a{color:#782f40;text-decoration:none;}
+a:hover{color:#333333;text-decoration:underline;}
+hr{margin:.7em 0;border-top:1px dashed #d0d0d0;border-bottom:1px dashed #f9f9f9;}
+p{padding:.5em 0;}
+li{margin:.2em 0;}
+ol, ul{list-style-position:inside;}
+ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
+table{border-collapse:collapse;text-align:left;line-height:28px;border-left:1px solid black;margin-top:15px;}
+#results table#fullscm{position:absolute;left:5px;background-color:white;}
+thead th,tbody th,body td {border-left:inherit;border-right:1px solid black;padding-right:6px;padding-left:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:200px}
+thead th{border-bottom:2px solid black}
+#stbl th, #stbl td{cursor:pointer;}
+pre code{margin:1em 0;font-size:13px;line-height:1.6;display:block;overflow:auto;}
+blockquote{display:block;text-align:justify;border-left:4px solid #eeeeee;}
+blockquote{margin:1em 0em;padding-left:1.5em;}
+blockquote p{margin:0;padding:.5em 0;}
+#container{width:650px;margin:2em auto;display:block;padding:0 2em;border-left:3px solid #782f40;}
+.content{font-size:16px;line-height:24px;display:none;min-height:500;padding-top:1em;}
+.content.active{display:block;}
+.content h1{padding:.5em 0;}
+.content img{max-width:600px;display:block;margin:4px auto;-webkit-box-shadow:#999 1px 1px 4px;-moz-box-shadow:#999 1px 1px 4px;box-shadow:#999 1px 1px 4px;}
+#tag_cloud{margin-bottom: 1em;}
+#tag_cloud a:hover{color:#333333 !important;text-decoration:none;}
+.listing-item,.listing-seperator{list-style-type:none;}
+.listing-item a{padding:.2em 1em;}
+.listing-item time{color:#999999;}
+.listing-seperator{font-weight:bold;}
+.meta{text-align:right;font-size:12px;}
+header{padding:1.5em 0;border-bottom: 1px solid #cccccc;text-align:center;}
+header img{float:left;margin-left:-140px;margin-top:-20px;}
+nav{font-family:sans-serif;font-size:1.1em;text-transform:uppercase;float:left;margin:1.6em 0 0 -12em;width:8em;}
+nav ul{direction:rtl;list-style-position:outside;list-style:none;}
+nav a{display:block;padding:.7em .5em;font-weight:bolder;color:#000000;}
+nav a:hover{background-color:#782f40;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;transition:color .2s linear;}
+#nav-toggle{display:none;line-height:inherit;margin:0;padding:4px 10px;border:1px solid black;border-radius: 2px;background-color:transparent;cursor:pointer;}
+#nav-toggle:hover{background-color:#9E9E9E;}
+li.active{list-style:circle;}
+.post{padding:.5em 0em;}
+h1{font-family:"Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.6em;color:#000;}
+h2{font-family:"Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;}
+h3{font-family:"Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.2em;color:#222;}
+h4{font-family:"Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1em;color:#333;}
+body h2{margin:1em 0;}
+form{font-size:0;}
+.form-control{display:inline-block;vertical-align:top;width:50%;font-size:1rem;box-sizing:border-box;}
+textarea{height:135px;overflow:auto;width:300px;border:1px solid #ccc;box-shadow:inset 0 1px 1px rgba(0,0,0,.075);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+textarea:focus{border-color:#782f40;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(120,47,64,.6);}
+input{margin:0 3px;}
+pre,code{font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,monospace;font-size:13px;}
+code{background-color:#ccc;}
+embed,object,iframe{display:block;margin:4px auto;}
+.venntooltip{position:absolute;text-align:center;width:128px;height:16px;background:#333;color:#ddd;padding:2px;border:0px;border-radius:8px;opacity:0;}
+#genebox{position:absolute;left:30%;top:30%;border:2px dashed;display:grid}
+#msg{position:fixed;bottom:0;right:0;width:250px;max-height:300px;word-wrap:break-word}
+.gist{font-size: 12px;line-height:1.6;}
+@media print {
+  *{font-weight:normal;}
+  h1,h2,h3{font-weight:400;}
+  a{color:black;border-bottom:lightgray dotted 1px;}
+}
+@media screen and (max-width: 960px) {
+  nav>ul{display:none;border:1px solid black;border-radius: 2px;background-color:white;}
+  nav{position:absolute;margin:-2em 0 0 0;}
+  #nav-toggle{display:block;}
+}
+@media screen and (min-width: 960px) {
+	nav>ul{display:block !important;}
+}
+/* Author by Sébastien JEAN | codepen.io/sebj54/pen/oxluI */
+button{display:inline-block;position:relative;line-height:2;padding:0 20px;margin:.8em 0 0 .5em;overflow:hidden;border:2px solid #555;outline:0;border-radius:2px;background-color:#fff;color:#555;transition:background-color .3s ease-in-out}
+button:hover{border-color:#222;background-color:#222;color:#fff;}
+button:before{content:"";position:absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;background-color:rgba(236,240,241,.3);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+button:active:before{width:120%;padding-top:120%;transition:width .2s ease-out,padding-top .2s ease-out}
+button.orange{border-color:#e67e22}
+button.orange:hover{border-color:#d35400;background-color:#d35400}
+button.red{border-color:#e74c3c}
+button.red:hover{border-color:#e74c3c;background-color:#e74c3c}
+button.sm{line-height:1.3;margin:0;padding:0 10px}
+/* Author by Randy Merrill | lea.verou.me/css3patterns */
+header{background-color: #8bc34aa1;
+  background-size: 13px 13px, 29px 29px, 37px 37px, 53px 53px;
+  background-image: -webkit-linear-gradient(0, rgba(255,255,255,.07) 50%, transparent 50%), -webkit-linear-gradient(0, rgba(255,255,255,.13) 50%, transparent 50%), -webkit-linear-gradient(0, transparent 50%, rgba(255,255,255,.17) 50%), -webkit-linear-gradient(0, transparent 50%, rgba(255,255,255,.19) 50%);
+  background-image: -moz-linear-gradient(0, rgba(255,255,255,.07) 50%, transparent 50%), -moz-linear-gradient(0, rgba(255,255,255,.13) 50%, transparent 50%), -moz-linear-gradient(0, transparent 50%, rgba(255,255,255,.17) 50%), -moz-linear-gradient(0, transparent 50%, rgba(255,255,255,.19) 50%);
+  background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%), linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%), linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%), linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);}
