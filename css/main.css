@@ -8,14 +8,13 @@
 * |/ | (~ (~
 * |\.|._)._)
 * --------------------------------- */
-@import url('https://fonts.googleapis.com/css?family=Galdeano');
 body{font-size:14px;font-family:Arial,sans-serif;color:#000000;background-color:#ffffff;}
 *{padding:0;margin: 0;outline:none;}
 a{color:#782f40;text-decoration:none;}
 a:hover{color:#333333;text-decoration:underline;}
 hr{margin:.7em 0;border-top:1px dashed #d0d0d0;border-bottom:1px dashed #f9f9f9;}
 p{padding:.5em 0;}
-li{margin:.2em 0;}
+li.active{list-style:circle;}
 ol, ul{list-style-position:inside;}
 ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
 table{border-collapse:collapse;text-align:left;line-height:28px;border-left:1px solid black;margin-top:15px;}
@@ -31,6 +30,7 @@ blockquote p{margin:0;padding:.5em 0;}
 .content{font-size:16px;line-height:24px;display:none;min-height:500;padding-top:1em;}
 .content.active{display:block;}
 .content h1{padding:.5em 0;}
+.content li{margin:.3em 0;}
 .content img{max-width:600px;display:block;margin:4px auto;-webkit-box-shadow:#999 1px 1px 4px;-moz-box-shadow:#999 1px 1px 4px;box-shadow:#999 1px 1px 4px;}
 #tag_cloud{margin-bottom: 1em;}
 #tag_cloud a:hover{color:#333333 !important;text-decoration:none;}
@@ -40,14 +40,13 @@ blockquote p{margin:0;padding:.5em 0;}
 .listing-seperator{font-weight:bold;}
 .meta{text-align:right;font-size:12px;}
 header{padding:1.5em 0;border-bottom: 1px solid #cccccc;text-align:center;}
-header img{float:left;margin-left:-140px;margin-top:-20px;}
-nav{font-family:sans-serif;font-size:1.1em;text-transform:uppercase;float:left;margin:1.6em 0 0 -12em;width:8em;}
+header img{float:left;margin-left:-160px;margin-top:-20px;}
+nav{font-family:sans-serif;font-size:1.2em;float:left;margin:1.6em 0 0 -11em;width:7em;}
 nav ul{direction:rtl;list-style-position:outside;list-style:none;}
 nav a{display:block;padding:.7em .5em;font-weight:bolder;color:#000000;}
 nav a:hover{background-color:#782f40;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;transition:color .2s linear;}
 #nav-toggle{display:none;line-height:inherit;margin:0;padding:4px 10px;border:1px solid black;border-radius: 2px;background-color:transparent;cursor:pointer;}
 #nav-toggle:hover{background-color:#9E9E9E;}
-li.active{list-style:circle;}
 .post{padding:.5em 0em;}
 h1{font-family:"Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.6em;color:#000;}
 h2{font-family:"Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:1.4em;color:#111;}
@@ -63,9 +62,11 @@ pre,code{font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,monospace
 code{background-color:#ccc;}
 embed,object,iframe{display:block;margin:4px auto;}
 .venntooltip{position:absolute;text-align:center;width:128px;height:16px;background:#333;color:#ddd;padding:2px;border:0px;border-radius:8px;opacity:0;}
-#genebox{position:absolute;left:30%;top:30%;border:2px dashed;display:grid}
-#msg{position:fixed;bottom:0;right:0;width:250px;max-height:300px;word-wrap:break-word}
+#genebox{position:absolute;left:30%;top:30%;border:2px dashed;display:grid;}
+#msg{position:fixed;bottom:0;right:0;width:250px;max-height:300px;word-wrap:break-word;}
 .gist{font-size: 12px;line-height:1.6;}
+#footer{background-color:#333;text-align:center;}
+#footer p{color:#999;font-size:12px;}
 @media print {
   *{font-weight:normal;}
   h1,h2,h3{font-weight:400;}

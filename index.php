@@ -21,7 +21,7 @@
 <div id="container">
 <div id="main" role="main">
 <header>
-  <a href="http://www.bio.fsu.edu/mcginnislab/"><img src="/attach/fsu.jpg" width="80" height="80"></a>
+  <a href="http://www.bio.fsu.edu/mcginnislab/"><img src="/attach/fsu.jpg" width="95" height="95"></a>
   <h1>Maize tissue GRN</h1>
   <h3>A tissue-specific <a>g</a>ene <a>r</a>egulatory <a>n</a>etwork for maize🌽</h3>
 </header>
@@ -39,8 +39,8 @@
 <div class="content active" id="p_a">
 <img src="/attach/1.png" align="middle">
 <div style="padding-left:.5em">
-<p>Regulation of gene expression is one of the most important and complex issues in biology. It is particularly interesting and intricate in eukaryotic species due to their large genomes and high-order nucleus organization. Plant biologists pioneered genetic research in gene regulation, from George Mendel to Barbara McClintock, and their work forms the foundation of the current understanding. </p>
-<p>Maize (Zea Mays) has been a model organism for over a hundred years, and is also of substantial economic significance. The recent development of next-generation sequencing has greatly enhanced maize research by making it easier to investigate genome-wide expression changes. Such data could be used to construct gene regulatory networks (GRNs) that elucidate gene regulation interactions in a systematic way. Even though all cells carry the same genetic code, cellular differentiation is likely guided by distinct GRNs. Nonetheless, there has been limited research in maize to decipher tissue-specific GRNs.</p>
+<p>Regulation of gene expression is one of the most important and complex issues in biology. It is particularly interesting and intricate in eukaryotic species due to their large genomes and high-order nucleus organization. Plant biologists pioneered genetic research in gene regulation, from Gregor Mendel to Barbara McClintock, and their work forms the foundation of the current understanding. </p>
+<p>Maize (<i>Zea mays</i>) has been a model organism for over a hundred years, and is also of substantial economic significance. The recent development of next-generation sequencing has greatly enhanced maize research by making it easier to investigate genome-wide expression changes. Such data could be used to construct gene regulatory networks (GRNs) that elucidate gene regulation interactions in a systematic way. Even though all cells carry the same genetic code, cellular differentiation is likely guided by distinct GRNs. Nonetheless, there has been limited research in maize to decipher tissue-specific GRNs.</p>
 <p>In this study, we have constructed maize GRNs from RNA-Seq expression data for leaf, root, SAM and seed tissue using a machine learning algorithm. Using publicly available RNA-Seq data, we predicted tissue-specific TF interactions at a similar positive rate with an <a href="http://science.sciencemag.org/content/353/6301/814.full">atlas GRN study</a>. Our GRNs showed good performance based upon evaluation with TF ChIP-Seq data. This study provides another view of GRN in maize aside from our <a href="http://www.bio.fsu.edu/mcginnislab/mcn/main_page.php">prior work</a> and generated GRNs with 2241 TFs and provided a high enough level of resolution to reveal the spatial variation of gene regulation.</p>
 </div></div>
 
@@ -78,19 +78,50 @@ GRMZM2G135052"></textarea></div>
 </div>  
 </div>
 <div class="content" id="p_c">
-  <p>网站特性：</p>
-  <ol>
+  <a href="#" onclick="$('.lang').toggle();" style="float:right;">EN/中</a>
+<div class="lang" style="display:none;">
+  <h2>网站特性：</h2>
+  <ul>
   <li>功能包括批量搜索基因交互信息、基因ID新旧版本转换以及下载全部数据</li>
-  <li>主体搜索功能：输入待查询基因编号，每个ID用逗号、空格或者另起一行分开。ID必须为v3版本，点击文本框上方的’demo’可以自动填入示例基因。默认将输入作为TF搜索目标基因，也可以作为target搜索与之交互的转录因子。搜索时必须指定器官组织，每个组织包含独立的交互数据。搜索方式包括三种：
-  <ol>
+  <li>主体搜索功能：输入待查询基因编号，每个ID用逗号、空格或者另起一行分开, 五个基因以内。ID必须为v3版本，点击文本框上方的'demo'可以自动填入示例基因。默认将输入作为TF搜索目标基因，也可以作为target搜索与之交互的转录因子。搜索时必须指定组织，每个组织包含独立的交互数据。搜索方式包括三种：<ol>
   <li>默认只返回匹配到的基因ID，返回的结果是以输入基因和所选组织构成的交互统计表。每个单元格中的数字代表该组织中与对应基因交互的TF(或者目标基因)的数量，双击数字可以显示对应的基因ID。双击粗体的组织名或者基因ID可以显示该行（列）数据的venn统计图（注意，只有不为0的单元格数量介于2和4之间才会显示）。此外，双击图中重叠区域也可以显示对应的基因ID，如果有重合区域无法体现，页面右下角会显示警告信息。点击表格上方的下载按钮可以导出为sif文件，在cytoscape中打开时是以组织作为边的交互图。</li>
-  <li>选择第二项则返回匹配基因的详细信息，包括基因名、基因组上的位置、基因功能以及同源的拟南芥基因等。每个基因在每个组织中只返回有限的结果（优先返回互作打分高的），上限可以在输入框中指定，数值在3~99之间。返回的结果是一张详细表格，以组织名称为首行分成数段（每段行数在组织名旁边标注），其中1、2、8列的基因ID可以双击打开对应的外部链接（grassius、maizegdb以及araport），内容过长的单元格只显示部分，鼠标悬停可完整显示。点击上方花括号内的组织名可以滚动到表格中对应的区段，点击下载按钮可下载包含完整表格内容的tsv文件。</li>
+  <li>选择第二项则返回匹配基因的详细信息，包括基因名、基因组上的位置、基因功能以及BLASTP的最优拟南芥基因等。每个基因在每个组织中只返回有限的结果（优先返回互作打分高的），上限可以在输入框中指定，数值在3~99之间。返回的结果是一张详细表格，以组织名称为首行分成数段（每段行数在组织名旁边标注），其中1、2、8列的基因ID可以双击打开对应的外部链接（GRASSIUS、maizeGDB以及Araport），内容过长的单元格只显示部分，鼠标悬停可完整显示。点击上方花括号内的组织名可以滚动到表格中对应的区段，点击下载按钮可下载包含完整表格内容的tsv文件。</li>
   <li>第三项为生成可供下载的结果表格，表头与第二项展示的相同，区别在于包含全部匹配的基因。</li>
   </ol>
   </li>
-  <li>ID转换页可以批量在v3或v4版本的基因ID之间转换，新版ID以Zm开头。输入格式与主要搜索页相同，区别在于此处不限制基因数量。搜索前确认转换方向被正确选择，如果勾选’显示描述’则会返回v4 ID对应的基因功能。双击结果表格中1、2列的基因ID可以打开对应的外部链接，点击上方下载按钮可以导出表格的tsv文件。另外，类型描述见表格下方。</li>
+  <li>转换页可以批量在v3或v4版本的基因ID之间转换，新版ID以Zm开头。输入格式与主要搜索页相同，区别在于此处限定十个基因以内。搜索前确认转换方向被正确选择，如果勾选'显示描述'则会返回v4 ID对应的基因功能。双击结果表格中1、2列的基因ID可以打开对应的外部链接，点击上方下载按钮可以导出表格的tsv文件。另外，类型描述见表格下方。</li>
   <li>下载页包含所有可供下载的原始数据。</li>
+  </ul>
+</div>
+<div class="lang">
+  <h2>Website features:</h2>
+  <ol>
+  <li>Predicted “TF-Target” regulatory interactions can be searched and downloaded from “Search” page. Users can use “TF” (By TF) or “Target” (By Target) to query database. </li>
+  <li>Database can be queried by AGPv2/v3 gene IDs. The new AGPv4 IDs should be converted to AGPv3 using “ID convert”.</li>
+  <li>Original data and source code can be accessed from “Download” page. </li>
   </ol>
+  <p>Tutorial:</p>
+  <ol>
+  <li>Query genes in the “Gene ID” box (less than 5 genes). Genes should be separated by comma, space or new line.</li>
+  <li>Choose the tissue to search (leaf, root, SAM or seed). At least one is required.</li>
+  <li>Choose “by TF” if query genes are TFs and search for their putative targets; choose “by target” if query genes are targets and search for putative TF regulators.</li>
+  <li>“Summary” will return a result table based selected parameters. <ul>
+  <li>Double click numbers will show putative targets/TFs for the chosen category.</li>
+  <li>Double click gene ID or tissue will show interactive Venn diagram. Venn diagram only works between 2 to 4 intersections. Double click intersection regions will return overlap gene IDs.</li>
+  <li>Searched result can be downloaded in SIF format and import into Cytoscape for further analysis.</li>
+  </ul>
+  </li>
+  <li>User can choose to exhibit top X hits (X &lt; 99) in details for each gene.</li>
+  </ol>
+  <p>Notes:</p>
+  <ul>
+  <li>Gene information is based on AGPv3.31.</li>
+  <li>The BLASTP best hit Arabidopsis (TAIR10) results with annotations are included.</li>
+  <li>Double click gene IDs will redirect to external databases for easy mining (GRASSIUS, MaizeGDB or Araport).</li>
+  <li>The result table can be downloaded as tab-delimited (tsv) file. </li>
+  </ul>
+</div>
+<img src="/attach/3.png" align="middle">
 </div>
 <div class="content" id="p_d">
   <form method="POST">
@@ -141,14 +172,40 @@ AC155377.1_FG001"></textarea></div>
   <div align="middle"><img src="/attach/2.png"></div>
 
 </div>
-<footer id="footer" style="background-color:#333;text-align:center">
-  <p style="color:#999;font-size:12px;">Copyright © 2017 Florida State University. All Right Reserved.</p>
+<footer id="footer">
+  <p>Copyright © 2017 Florida State University. All Right Reserved.</p>
 </footer>
 <div id="msg"></div>
 </div></div>
 
 <script type="text/javascript">
-  var ql = <?php echo QLIMIT;?>
+  var ql = <?php echo QLIMIT;?>;
+  var cl = <?php echo CLIMIT;?>;
+  var str1 = 'No gene specified!';
+  var str2 = 'Input IDs contain duplicates!';
+  var str3 = 'No tissue specified!';
+  var str4 = 'Number of genes should less than {0}!';
+  var str5 = 'https://www.maizegdb.org/gene_center/gene/{0}';
+  var str6 = 'https://bioinformatics.psb.ugent.be/plaza/versions/plaza_v4_monocots/genes/view/{0}';
+  var str7 = 'Download results as tsv file';
+  var str8 = 'Type 0 means "1 to 1", 1 means "many to 1", 2 means "1 to many"';
+  var str9 = 'http://grassius.org/search_results.php?searchterm={0}';
+  var str10= 'https://www.araport.org/search/thalemine/{0}';
+  var str11= 'ID convert';
+  var str12= 'Information table';
+  var str13= 'File is ready on server side';
+  var str14= 'Summary against {0}';
+  var str15= 'target';
+  var str16= 'regulator';
+  var str17= 'Results of interaction pairs {0} with topmost score';
+  var str18= 'Double click gene ID can redirect to external database';
+  var str19= 'Download tsv file with top {0} predictions';
+  var str20= 'Click to download tsv file.(size: {0})';
+  var str21= 'server error!';
+  var str22= 'Export all data as SIF file';
+  var str23= 'Double click gene ID/ tissue to show Venn diagram; double click number to show IDs';
+  var str24= 'Double click intersection to show IDs';
+
 </script>
 <script type="text/javascript" src="/js/canvas-nest.min.js"></script>
 <script type="text/javascript" src="/js/d3.v4.min.js"></script>
