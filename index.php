@@ -1,4 +1,5 @@
 <?php include 'config.php';?>
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +15,6 @@
   <![endif]-->
   <link href="/css/main.css" rel="stylesheet">
 
-  <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
   <title>Maize tissue GRN - McGinnis Lab</title>
 </head>
 <body>
@@ -28,24 +28,24 @@
 <nav>
   <button type="button" id="nav-toggle">☰MENU</button>
   <ul>
-  <li class="active"><a href="#" class="nav_tab" id="_a">Overview</a></li>
-  <li><a href="#" class="nav_tab" id="_b">Search</a></li>
-  <li><a href="#" class="nav_tab" id="_c">Manual</a></li>
-  <li><a href="#" class="nav_tab" id="_d">ID Convert</a></li>
-  <li><a href="#" class="nav_tab" id="_e">Download</a></li>
-  <li><a href="#" class="nav_tab" id="_f">Contact</a></li>
+  <li<?php echo isset($_GET["t"])?'':' class="active"';?>><a href="/" class="nav_tab" id="_a">Overview</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='b'?' class="active"':'';?>><a href="/?t=b" class="nav_tab" id="_b">Search</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='c'?' class="active"':'';?>><a href="/?t=c" class="nav_tab" id="_c">Manual</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='d'?' class="active"':'';?>><a href="/?t=d" class="nav_tab" id="_d">ID Convert</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='e'?' class="active"':'';?>><a href="/?t=e" class="nav_tab" id="_e">Download</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='f'?' class="active"':'';?>><a href="/?t=f" class="nav_tab" id="_f">Contact</a></li>
   </ul>
 </nav>
-<div class="content active" id="p_a">
+<div class="tab_content">
+<div class="content<?php echo isset($_GET['t'])?'':' active';?>" id="p_a">
 <img src="/attach/1.png" align="middle">
 <div style="padding-left:.5em">
-<p>Regulation of gene expression is one of the most important and complex issues in biology. It is particularly interesting and intricate in eukaryotic species due to their large genomes and high-order nucleus organization. Plant biologists pioneered genetic research in gene regulation, from Gregor Mendel to Barbara McClintock, and their work forms the foundation of the current understanding. </p>
+<p><o>R</o>egulation of gene expression is one of the most important and complex issues in biology. It is particularly interesting and intricate in eukaryotic species due to their large genomes and high-order nucleus organization. Plant biologists pioneered genetic research in gene regulation, from Gregor Mendel to Barbara McClintock, and their work forms the foundation of the current understanding. </p>
 <p>Maize (<i>Zea mays</i>) has been a model organism for over a hundred years, and is also of substantial economic significance. The recent development of next-generation sequencing has greatly enhanced maize research by making it easier to investigate genome-wide expression changes. Such data could be used to construct gene regulatory networks (GRNs) that elucidate gene regulation interactions in a systematic way. Even though all cells carry the same genetic code, cellular differentiation is likely guided by distinct GRNs. Nonetheless, there has been limited research in maize to decipher tissue-specific GRNs.</p>
 <p>In this study, we have constructed maize GRNs from RNA-Seq expression data for leaf, root, SAM and seed tissue using a machine learning algorithm. Using publicly available RNA-Seq data, we predicted tissue-specific TF interactions at a similar positive rate with an <a href="http://science.sciencemag.org/content/353/6301/814.full">atlas GRN study</a>. Our GRNs showed good performance based upon evaluation with TF ChIP-Seq data. This study provides another view of GRN in maize aside from our <a href="http://www.bio.fsu.edu/mcginnislab/mcn/main_page.php">prior work</a> and generated GRNs with 2241 TFs and provided a high enough level of resolution to reveal the spatial variation of gene regulation.</p>
 </div></div>
-
-<div class="content" id="p_b">
-  <form method="POST">
+<div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='b'?' active':'';?>" id="p_b">
+  <form action="api.php" method="POST">
     <div class="form-control"><label for="key">Gene ID(comma/space/new line)<a href=# onclick="$('#key').val('GRMZM2G017087,GRMZM2G015534,GRMZM2G133331');">demo</a>:</label><br />
     <textarea id="key" row="8" cols="50" name="s_key" type="text" placeholder="AC149829.2_FG004
 GRMZM2G135052"></textarea></div>
@@ -69,15 +69,15 @@ GRMZM2G135052"></textarea></div>
       <input type="radio" name="s_flag" value="3" /><b>TSV file</b> with all information<br />
     </fieldset></div>
     <div class="form-control" style="vertical-align:bottom;text-align:right;">
-      <button class="orange" type="reset">Reset</button>
-      <button type="submit">Search</button>
+      <button type="reset">Reset</button>
+      <button class="hl" type="submit">Search</button>
     </div>
   </form>
   <hr>
-  <div id="results" style="min-height:100px;">
+  <div id="results" class="rpanel">
 </div>  
 </div>
-<div class="content" id="p_c">
+<div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='c'?' active':'';?>" id="p_c">
   <a href="#" onclick="$('.lang').toggle();" style="float:right;">EN/中</a>
 <div class="lang" style="display:none;">
   <h2>网站特性：</h2>
@@ -123,8 +123,8 @@ GRMZM2G135052"></textarea></div>
 </div>
 <img src="/attach/3.png" align="middle">
 </div>
-<div class="content" id="p_d">
-  <form method="POST">
+<div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='d'?' active':'';?>" id="p_d">
+  <form action="api.php" method="POST">
     <div class="form-control"><label>ID convert between v3 and v4:</label><br />
     <textarea row="8" cols="50" name="s_key" type="text" placeholder="AC149829.2_FG004
 AC155377.1_FG001"></textarea></div>
@@ -136,16 +136,16 @@ AC155377.1_FG001"></textarea></div>
         <lable><input type="checkbox" name="s_f4" value="1" />show description</lable>
       </fieldset>
       <div style="text-align:right;">
-        <button class="orange" type="reset">Reset</button>
-        <button type="submit">Search</button>
+        <button type="reset">Reset</button>
+        <button class="hl" type="submit">Search</button>
       </div>
     </div>
   </form>
   <hr>
-  <div id="idres" style="min-height:100px;">
+  <div id="idres" class="rpanel">
   </div>
 </div>
-<div class="content" id="p_e">
+<div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='e'?' active':'';?>" id="p_e">
   <p><ul>
     <li>GRN – top 1 million edges</li>
     <ul>
@@ -160,7 +160,7 @@ AC155377.1_FG001"></textarea></div>
     <li>All codes are available at Github (link later)</li>
   </ul></p>
 </div>
-<div class="content" id="p_f">
+<div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='f'?' active':'';?>" id="p_f">
   <h2>Contact information:</h2>
   <p>Department of Biological Science, Florida State University, Tallahassee, United States</p>
   <p style="line-height:2;"><b>Dr. Karen M. McGinnis</b><br />
@@ -172,12 +172,13 @@ AC155377.1_FG001"></textarea></div>
   <div align="middle"><img src="/attach/2.png"></div>
 
 </div>
+</div>
 <footer id="footer">
   <p>Copyright © 2017 Florida State University. All Right Reserved.</p>
 </footer>
 <div id="msg"></div>
 </div></div>
-
+<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
   var ql = <?php echo QLIMIT;?>;
   var cl = <?php echo CLIMIT;?>;
@@ -191,6 +192,7 @@ AC155377.1_FG001"></textarea></div>
   var str8 = 'Type 0 means "1 to 1", 1 means "many to 1", 2 means "1 to many"';
   var str9 = 'http://grassius.org/search_results.php?searchterm={0}';
   var str10= 'https://www.araport.org/search/thalemine/{0}';
+  //--BEGIN--string for title of results
   var str11= 'ID convert';
   var str12= 'Information table';
   var str13= 'File is ready on server side';
@@ -198,6 +200,7 @@ AC155377.1_FG001"></textarea></div>
   var str15= 'target';
   var str16= 'regulator';
   var str17= 'Results of interaction pairs {0} with topmost score';
+  //--END--string for title of results
   var str18= 'Double click gene ID can redirect to external database';
   var str19= 'Download tsv file with top {0} predictions';
   var str20= 'Click to download tsv file.(size: {0})';
@@ -206,8 +209,21 @@ AC155377.1_FG001"></textarea></div>
   var str23= 'Double click gene ID/ tissue to show Venn diagram; double click number to show IDs';
   var str24= 'Double click intersection to show IDs';
 
+  $('.nav_tab').on('click', function(e){
+    if($('#nav-toggle').is(':visible')) {$('nav ul').toggle()}
+    var tab_id = $(this).attr('id');
+    $('nav li').removeClass('active');
+    $('.content').removeClass('active');
+    $(this).parent().addClass('active');
+    $("#p"+tab_id).addClass('active');
+    $('#msg').html('');
+    return false;
+  })
+  $('#nav-toggle').on('click', function() {
+    $('nav ul').toggle()
+  })
 </script>
-<script type="text/javascript" src="/js/canvas-nest.min.js"></script>
+<script type="text/javascript" count="99" src="/js/canvas-nest.min.js"></script>
 <script type="text/javascript" src="/js/d3.v4.min.js"></script>
 <script type="text/javascript" src="/js/venn.js"></script>
 <script type="text/javascript" src="/js/main.min.js"></script>

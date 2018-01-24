@@ -44,9 +44,10 @@ if (isset($_POST["s_v4"])) {
 	}
 } elseif ($_POST["s_flag"] == 3) {
 	//generate download link
+	$geneint[] = 0;
 	$currHash = hash('crc32', implode($typ[0], $keys).$typ[0].implode($typ[1], $org));
 	$currPath = "tmp/".$currHash."/";
-	mkdir("./".$currPath, 0755, true);
+	if(!is_dir($currPath)) {mkdir($currPath, 0755, true);}
 	if ($f = fopen($currPath."maize_tissue_grn.tsv", "w")) {
 		fwrite($f, sprintf(QUERY_TITLE, $typ[2], $typ[3])."\n");
 		foreach ($org as $o) {
@@ -59,13 +60,14 @@ if (isset($_POST["s_v4"])) {
 					$dataArray[] = implode("\t", $row);
 				}
 				if ($num = fwrite($f, $o.":\n".implode("\n", $dataArray)."\n")) {
-					$geneint[] = conSize($num);
+					$geneint[0] += $num;
 					$geneint[] = $currPath."maize_tissue_grn.tsv";
 				}
 			}
 		}
+		$geneint[0] = conSize($geneint[0]);
 		fclose($f);
-	} else { $geneint[] = 0; }
+	}
 } else if ($_POST["s_flag"] == 1) {
 	//fetch expert
 	foreach ($org as $o) {
