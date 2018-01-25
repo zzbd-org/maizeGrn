@@ -19,6 +19,9 @@
 </head>
 <body>
 <div id="container">
+<!--[if lte IE 8]>
+  <div id="warn">Browser too old, website may not work properly!</div>
+<![endif]-->
 <div id="main" role="main">
 <header>
   <a href="http://www.bio.fsu.edu/mcginnislab/"><img src="/attach/fsu.jpg" width="95" height="95"></a>
@@ -64,9 +67,9 @@ GRMZM2G135052"></textarea></div>
     <div class="form-control" style="margin-top: 0.9em;padding-right:1.5em;">
       <fieldset>
       <legend>Optional sets:</legend>
-      <input type="radio" name="s_flag" value="0" checked="checked" /><b>Summary</b> with gene ID only<br />
-      <input type="radio" name="s_flag" value="1" /> <b>Top <input name="s_num" type="number" value="<?php echo ELIMIT;?>" min="3" max="99" step="3" style="width: 35px;" /> hits</b> each gene with detail<br />
-      <input type="radio" name="s_flag" value="3" /><b>TSV file</b> with all information<br />
+      <label><input type="radio" name="s_flag" value="0" checked="checked" /><b>Summary</b> with gene ID only</label><br />
+      <label><input type="radio" name="s_flag" value="1" /><b>Top <input name="s_num" type="number" value="<?php echo ELIMIT;?>" min="3" max="99" step="3" /> hits</b> each gene with detail</label><br />
+      <label><input type="radio" name="s_flag" value="3" /><b>TSV file</b> with all information</label><br />
     </fieldset></div>
     <div class="form-control" style="vertical-align:bottom;text-align:right;">
       <button type="reset">Reset</button>
