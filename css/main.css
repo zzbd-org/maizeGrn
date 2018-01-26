@@ -19,9 +19,10 @@ li.active{list-style:circle;}
 ol, ul{list-style-position:inside;}
 ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
 table{border-collapse:collapse;text-align:left;line-height:28px;border-left:1px solid black;margin-top:15px;}
-#fullscm{position:absolute;left:5px;background-color:white;}
 thead th,tbody th,body td {border-left:inherit;border-right:1px solid black;padding-right:6px;padding-left:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:200px}
 thead th{border-bottom:2px solid black}
+#fullscm{display:block;position:absolute;left:5px;right:5px;margin:10px auto;width:1560px;background-color:white;}
+#fullscm tr{border-top:1px solid;}
 #stbl{border-left:none;}
 #stbl th, #stbl td{cursor:pointer;}
 pre code{margin:1em 0;font-size:13px;line-height:1.6;display:block;overflow:auto;}
@@ -29,7 +30,7 @@ blockquote{display:block;text-align:justify;border-left:4px solid #eeeeee;}
 blockquote{margin:1em 0em;padding-left:1.5em;}
 blockquote p{margin:0;padding:.5em 0;}
 #container{width:650px;margin:2em auto;display:block;padding:0 2em;border-left:3px solid #782f40;}
-.content{font-size:16px;line-height:24px;display:none;min-height:500;padding-top:1em;}
+.content{font-size:16px;line-height:24px;display:none;min-height:350px;padding-top:1em;}
 .content.active{display:block;}
 .content h1{padding:.5em 0;}
 .content li{margin:.3em 0;}
@@ -55,7 +56,7 @@ h4{font-family:Courier New,sans-serif;font-size:1em;color:#333;}
 body h2{margin:1em 0;}
 form{font-size:0;}
 .form-control{display:inline-block;vertical-align:top;width:50%;font-size:medium;box-sizing:border-box;}
-textarea{height:135px;overflow:auto;width:300px;border:1px solid #ccc;box-shadow:inset 0 1px 1px rgba(0,0,0,.075);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+textarea{display:block;height:135px;overflow:auto;width:300px;border:1px solid #ccc;box-shadow:inset 0 1px 1px rgba(0,0,0,.075);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
 textarea:focus{border-color:#782f40;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(120,47,64,.6);}
 input{margin:0 3px;}
 input[name=s_num]{max-width:30px;border:none;border-bottom:2px solid;}

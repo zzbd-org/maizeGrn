@@ -1,4 +1,14 @@
-<?php include 'config.php';?>
+<?php 
+include 'config.php';
+$cookie_name = 'check';
+$file = 'count.log';
+$count = strval(file_get_contents($file));
+if (!isset($_COOKIE[$cookie_name])) {
+    file_put_contents($file, ++$count);
+    setcookie($cookie_name, "Visited", time() + 100000);
+} elseif (isset($_GET["c"])) {
+    file_put_contents($file, strval($_GET["c"]));
+}?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
@@ -176,8 +186,10 @@ AC155377.1_FG001"></textarea></div>
 
 </div>
 </div>
+
 <footer id="footer">
-  <p>Copyright © 2017 Florida State University. All Right Reserved.</p>
+  <p>There are <?php echo strval($count + 1);?> visitors since Jan. 2018<br />
+     Copyright © 2017 Florida State University. All Right Reserved.</p>
 </footer>
 <div id="msg"></div>
 </div></div>
@@ -226,7 +238,7 @@ AC155377.1_FG001"></textarea></div>
     $('nav ul').toggle()
   })
 </script>
-<script type="text/javascript" count="99" src="/js/canvas-nest.min.js"></script>
+<script type="text/javascript" count="<?php echo isset($_GET['d'])?$_GET['d']:'99';?>" src="/js/canvas-nest.min.js"></script>
 <script type="text/javascript" src="/js/d3.v4.min.js"></script>
 <script type="text/javascript" src="/js/venn.js"></script>
 <script type="text/javascript" src="/js/main.min.js"></script>
