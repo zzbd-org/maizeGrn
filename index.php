@@ -23,7 +23,7 @@ if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot')
   <!--[if lte IE 8]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
-  <link href="/css/main.css" rel="stylesheet">
+  <link href="./css/main.css" rel="stylesheet">
 
   <title>Maize tissue GRN - McGinnis Lab</title>
 </head>
@@ -34,7 +34,7 @@ if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot')
 <![endif]-->
 <div id="main" role="main">
 <header>
-  <a href="http://www.bio.fsu.edu/mcginnislab/"><img src="/attach/fsu.jpg" width="95" height="95"></a>
+  <a href="//www.bio.fsu.edu/mcginnislab/"><img src="./attach/fsu.jpg" width="95" height="95"></a>
   <h1>Maize tissue GRN</h1>
   <h3>A tissue-specific <a>g</a>ene <a>r</a>egulatory <a>n</a>etwork for maize🌽</h3>
 </header>
@@ -42,16 +42,16 @@ if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot')
   <button type="button" id="nav-toggle">☰MENU</button>
   <ul>
   <li<?php echo isset($_GET["t"])?'':' class="active"';?>><a href="/" class="nav_tab" id="_a">Overview</a></li>
-  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='b'?' class="active"':'';?>><a href="/?t=b" class="nav_tab" id="_b">Search</a></li>
-  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='c'?' class="active"':'';?>><a href="/?t=c" class="nav_tab" id="_c">Manual</a></li>
-  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='d'?' class="active"':'';?>><a href="/?t=d" class="nav_tab" id="_d">ID Convert</a></li>
-  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='e'?' class="active"':'';?>><a href="/?t=e" class="nav_tab" id="_e">Download</a></li>
-  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='f'?' class="active"':'';?>><a href="/?t=f" class="nav_tab" id="_f">Contact</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='b'?' class="active"':'';?>><a href="./?t=b" class="nav_tab" id="_b">Search</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='c'?' class="active"':'';?>><a href="./?t=c" class="nav_tab" id="_c">Manual</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='d'?' class="active"':'';?>><a href="./?t=d" class="nav_tab" id="_d">ID Convert</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='e'?' class="active"':'';?>><a href="./?t=e" class="nav_tab" id="_e">Download</a></li>
+  <li<?php echo isset($_GET["t"])&&$_GET["t"]=='f'?' class="active"':'';?>><a href="./?t=f" class="nav_tab" id="_f">Contact</a></li>
   </ul>
 </nav>
 <div class="tab_content">
 <div class="content<?php echo isset($_GET['t'])?'':' active';?>" id="p_a">
-<img src="/attach/1.png" align="middle">
+<img src="./attach/1.png" align="middle">
 <div style="padding-left:.5em">
 <p><o>R</o>egulation of gene expression is one of the most important and complex issues in biology. It is particularly interesting and intricate in eukaryotic species due to their large genomes and high-order nucleus organization. Plant biologists pioneered genetic research in gene regulation, from Gregor Mendel to Barbara McClintock, and their work forms the foundation of the current understanding. </p>
 <p>Maize (<i>Zea mays</i>) has been a model organism for over a hundred years, and is also of substantial economic significance. The recent development of next-generation sequencing has greatly enhanced maize research by making it easier to investigate genome-wide expression changes. Such data could be used to construct gene regulatory networks (GRNs) that elucidate gene regulation interactions in a systematic way. Even though all cells carry the same genetic code, cellular differentiation is likely guided by distinct GRNs. Nonetheless, there has been limited research in maize to decipher tissue-specific GRNs.</p>
@@ -134,7 +134,7 @@ GRMZM2G135052"></textarea></div>
   <li>The result table can be downloaded as tab-delimited (tsv) file. </li>
   </ul>
 </div>
-<img src="/attach/3.png" align="middle">
+<img src="./attach/3.png" align="middle">
 </div>
 <div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='d'?' active':'';?>" id="p_d">
   <form action="api.php" method="POST">
@@ -162,15 +162,15 @@ AC155377.1_FG001"></textarea></div>
   <p><ul>
     <li>GRN – top 1 million edges</li>
     <ul>
-      <li><a href="/attach/ll_leaf_top1M.zip">Leaf</a></li>
-      <li><a href="/attach/ll_root_top1M.zip">Root</a></li>
-      <li><a href="/attach/ll_sam_top1M.zip">SAM</a></li>
-      <li><a href="/attach/ll_seed_top1M.zip">Seed</a></li>
+      <li><a href="./attach/ll_leaf_top1M.zip">Leaf</a></li>
+      <li><a href="./attach/ll_root_top1M.zip">Root</a></li>
+      <li><a href="./attach/ll_sam_top1M.zip">SAM</a></li>
+      <li><a href="./attach/ll_seed_top1M.zip">Seed</a></li>
     </ul>
-    <li><a href="/attach/ALL_FC_noDuplicateLib_biggerThan5Million_70allignmentRate_1266.zip">Gene expression matrix used in this study.</a></li>
-    <li><a href="/attach/All_Gene_Annotation.zip">Gene annotation table.</a></li>
-    <li><a href="/attach/maize.v3TOv4.geneIDhistory.zip">Maize v3 to v4 gene ID conversion table (from GRAMENE)</a></li>
-    <li>All codes are available at Github (link later)</li>
+    <li><a href="./attach/ALL_FC_noDuplicateLib_biggerThan5Million_70allignmentRate_1266.zip">Gene expression matrix used in this study.</a></li>
+    <li><a href="./attach/All_Gene_Annotation.zip">Gene annotation table.</a></li>
+    <li><a href="./attach/maize.v3TOv4.geneIDhistory.zip">Maize v3 to v4 gene ID conversion table (from GRAMENE)</a></li>
+    <li>All codes are available at <a href="">Github</a></li>
   </ul></p>
 </div>
 <div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='f'?' active':'';?>" id="p_f">
@@ -182,7 +182,7 @@ AC155377.1_FG001"></textarea></div>
      Lab: King Life Sciences<br />
      Lab: (850) 645-8815<br />
      <a href="mailto:mcginnis@bio.fsu.edu"> E-mail: mcginnis@bio.fsu.edu</a></p>
-  <div align="middle"><img src="/attach/2.png"></div>
+  <div align="middle"><img src="./attach/2.png"></div>
 
 </div>
 </div>
@@ -193,7 +193,7 @@ AC155377.1_FG001"></textarea></div>
 </footer>
 <div id="msg"></div>
 </div></div>
-<script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
   var ql = <?php echo QLIMIT;?>;
   var cl = <?php echo CLIMIT;?>;
@@ -238,9 +238,9 @@ AC155377.1_FG001"></textarea></div>
     $('nav ul').toggle()
   })
 </script>
-<script type="text/javascript" count="<?php echo isset($_GET['d'])?$_GET['d']:'99';?>" src="/js/canvas-nest.min.js"></script>
-<script type="text/javascript" src="/js/d3.v4.min.js"></script>
-<script type="text/javascript" src="/js/venn.js"></script>
-<script type="text/javascript" src="/js/main.min.js"></script>
+<script type="text/javascript" count="<?php echo isset($_GET['d'])?$_GET['d']:'99';?>" src="./js/canvas-nest.min.js"></script>
+<script type="text/javascript" src="./js/d3.v4.min.js"></script>
+<script type="text/javascript" src="./js/venn.js"></script>
+<script type="text/javascript" src="./js/main.min.js"></script>
 </body>
 </html>
