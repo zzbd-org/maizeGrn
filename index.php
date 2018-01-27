@@ -210,16 +210,16 @@ AC155377.1_FG001"></textarea></div>
   //--BEGIN--string for title of results
   var str11= 'ID convert';
   var str12= 'Information table';
-  var str13= 'File is ready on server side';
+  var str13= 'Ready for download on server side';
   var str14= 'Summary against {0}';
   var str15= 'target';
   var str16= 'regulator';
   var str17= 'Results of interaction pairs {0} with topmost score';
   //--END--string for title of results
   var str18= 'Double click gene ID can redirect to external database';
-  var str19= 'Download tsv file with top {0} predictions';
-  var str20= 'Click to download tsv file.(size: {0})';
-  var str21= 'server error!';
+  var str19= 'Save as tsv file with top {0} predictions';
+  var str20= 'Right click to save as tsv file [size: {0}]';
+  var str21= 'No result or error!';
   var str22= 'Export all data as SIF file';
   var str23= 'Double click gene ID/ tissue to show Venn diagram; double click number to show IDs';
   var str24= 'Double click intersection to show IDs';
@@ -237,6 +237,7 @@ AC155377.1_FG001"></textarea></div>
   $('#nav-toggle').on('click', function() {
     $('nav ul').toggle()
   })
+
 </script>
 <script type="text/javascript" count="<?php echo isset($_GET['d'])?$_GET['d']:'99';?>" src="./js/canvas-nest.min.js"></script>
 <script type="text/javascript" src="./js/d3.v4.min.js"></script>

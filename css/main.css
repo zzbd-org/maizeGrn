@@ -21,8 +21,10 @@ ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
 table{border-collapse:collapse;text-align:left;line-height:28px;border-left:1px solid black;margin-top:15px;}
 thead th,tbody th,body td {border-left:inherit;border-right:1px solid black;padding-right:6px;padding-left:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:200px}
 thead th{border-bottom:2px solid black}
-#fullscm{display:block;position:absolute;left:5px;right:5px;margin:10px auto;width:1560px;background-color:white;}
-#fullscm tr{border-top:1px solid;}
+#fullscm{position:absolute;left:5px;right:5px;text-align:center;}
+#fullscm>table{display:inline-block;margin:10px 0;background-color:white;}
+#fullscm>table tr{border-top:1px solid;}
+#fullscm>table tbody{border-bottom:2px solid;}
 #stbl{border-left:none;}
 #stbl th, #stbl td{cursor:pointer;}
 pre code{margin:1em 0;font-size:13px;line-height:1.6;display:block;overflow:auto;}
@@ -69,8 +71,8 @@ embed,object,iframe{display:block;margin:4px auto;}
 #genebox>textarea{border:2px solid;border-bottom:none;display:inherit;}
 #genebox>button{width:100%;}
 #msg{position:fixed;bottom:0;right:0;width:250px;max-height:300px;word-wrap:break-word;}
-.b2t{box-sizing:border-box;position:fixed;z-index:1050;padding:0 6px;opacity:0.6;cursor:pointer;text-align:center;background-color:#782f40;right:30px;bottom:-100px;-webkit-transform:translateZ(0);transition:bottom 0.2s ease-in-out 0s;}
-.b2t>a{color:#fff;text-decoration:none;}
+.b2t{box-sizing:border-box;position:fixed;z-index:1050;opacity:0.6;cursor:pointer;text-align:center;background-color:#782f40;right:30px;bottom:-100px;-webkit-transform:translateZ(0);transition:bottom 0.2s ease-in-out 0s;}
+.b2t>a{color:#fff;text-decoration:none;padding:0 6px;}
 .b2t>a:hover{color:#fff;}
 .b2t span:before{content:"\25B2";}
 .b2t.b2t-on{bottom:30px;}
@@ -102,6 +104,7 @@ button.hl:hover{border-color:#782f40;background-color:#782f40}
 button.red{border-color:#e74c3c}
 button.red:hover{border-color:#e74c3c;background-color:#e74c3c}
 button.sm{line-height:1.3;margin:0;padding:0 10px}
+button[disabled]{border-color:gray}
 /* Author by Randy Merrill | lea.verou.me/css3patterns */
 header{background-color: #8bc34aa1;
   background-size: 13px 13px, 29px 29px, 37px 37px, 53px 53px;
