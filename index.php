@@ -23,23 +23,26 @@ if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot')
   <!--[if lte IE 8]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
+  <link href="./css/normalize.min.css" rel="stylesheet">
   <link href="./css/main.css" rel="stylesheet">
 
   <title>Maize tissue GRN - McGinnis Lab</title>
 </head>
 <body>
 <div id="container">
-<!--[if lte IE 8]>
+<!--[if lte IE 9]>
   <div id="warn">Browser too old, website may not work properly!</div>
 <![endif]-->
 <div id="main" role="main">
 <header>
-  <a href="//www.bio.fsu.edu/mcginnislab/"><img src="./attach/fsu.jpg" width="95" height="95"></a>
+  <a href="//www.bio.fsu.edu/mcginnislab/">
+    <img src="./attach/fsu.jpg" width="95" height="95" alt="logo">
+  </a>
   <h1>Maize tissue GRN</h1>
   <h3>A tissue-specific <a>g</a>ene <a>r</a>egulatory <a>n</a>etwork for maize🌽</h3>
 </header>
 <nav>
-  <button type="button" id="nav-toggle">☰MENU</button>
+  <button type="button" id="nav-toggle" onclick="$('nav ul').toggle()">☰MENU</button>
   <ul>
   <li<?php echo isset($_GET["t"])?'':' class="active"';?>><a href="/" class="nav_tab" id="_a">Overview</a></li>
   <li<?php echo isset($_GET["t"])&&$_GET["t"]=='b'?' class="active"':'';?>><a href="./?t=b" class="nav_tab" id="_b">Search</a></li>
@@ -51,7 +54,9 @@ if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot')
 </nav>
 <div class="tab_content">
 <div class="content<?php echo isset($_GET['t'])?'':' active';?>" id="p_a">
-<img src="./attach/1.png" align="middle">
+<noscript data-src="./attach/1.png">
+  <img src="./attach/1.png" alt="" data-src="">
+</noscript>
 <div style="padding-left:.5em">
 <p><o>R</o>egulation of gene expression is one of the most important and complex issues in biology. It is particularly interesting and intricate in eukaryotic species due to their large genomes and high-order nucleus organization. Plant biologists pioneered genetic research in gene regulation, from Gregor Mendel to Barbara McClintock, and their work forms the foundation of the current understanding. </p>
 <p>Maize (<i>Zea mays</i>) has been a model organism for over a hundred years, and is also of substantial economic significance. The recent development of next-generation sequencing has greatly enhanced maize research by making it easier to investigate genome-wide expression changes. Such data could be used to construct gene regulatory networks (GRNs) that elucidate gene regulation interactions in a systematic way. Even though all cells carry the same genetic code, cellular differentiation is likely guided by distinct GRNs. Nonetheless, there has been limited research in maize to decipher tissue-specific GRNs.</p>
@@ -59,7 +64,7 @@ if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot')
 </div></div>
 <div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='b'?' active':'';?>" id="p_b">
   <form action="api.php" method="POST">
-    <div class="form-control"><label for="key">Gene ID(comma/space/new line)<a href=# onclick="$('#key').val('GRMZM2G017087,GRMZM2G015534,GRMZM2G133331');">demo</a>:</label><br />
+    <div class="form-control"><label for="key">Gene ID(comma/space/new line) <a href=# onclick="$('#key').val('GRMZM2G017087,GRMZM2G015534,GRMZM2G133331');">demo</a>:</label><br />
     <textarea id="key" name="s_key" placeholder="AC149829.2_FG004
 GRMZM2G135052"></textarea></div>
     <div class="form-control" style="padding-left:0.9em;vertical-align:bottom;">
@@ -74,11 +79,11 @@ GRMZM2G135052"></textarea></div>
     </fieldset>
   </div>
   
-    <div class="form-control" style="margin-top: 0.9em;padding-right:1.5em;">
+    <div class="form-control" style="margin-top: 0.9em;padding-right:1.1em;">
       <fieldset>
       <legend>Optional sets:</legend>
       <label><input type="radio" name="s_flag" value="0" checked="checked" /><b>Summary</b> with gene IDs only</label><br />
-      <label><input type="radio" name="s_flag" value="1" /><b>Top <input name="s_num" type="number" value="<?php echo ELIMIT;?>" min="3" max="99" step="3" /> hits</b> each gene with detail</label><br />
+      <label><input type="radio" name="s_flag" value="1" /><b>Top <input name="s_num" type="number" value="<?php echo ELIMIT;?>" min="3" max="99" step="3" />hits</b> each gene with detail</label><br />
       <label><input type="radio" name="s_flag" value="3" /><b>TSV file</b> with all information</label><br />
     </fieldset></div>
     <div class="form-control" style="vertical-align:bottom;text-align:right;">
@@ -134,12 +139,14 @@ GRMZM2G135052"></textarea></div>
   <li>The result table can be downloaded as tab-delimited (tsv) file. </li>
   </ul>
 </div>
-<img src="./attach/3.png" align="middle">
+<noscript data-src="./attach/3.png">
+  <img src="./attach/3.png" alt="" data-src="">
+</noscript>
 </div>
 <div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='d'?' active':'';?>" id="p_d">
   <form action="api.php" method="POST">
     <div class="form-control"><label>ID convert between v3 and v4:</label><br />
-    <textarea placeholder="AC149829.2_FG004
+    <textarea name="s_key" placeholder="AC149829.2_FG004
 AC155377.1_FG001"></textarea></div>
     <div class="form-control" style="padding:1em 0 0 0.9em;">
       <fieldset>
@@ -182,7 +189,11 @@ AC155377.1_FG001"></textarea></div>
      Lab: King Life Sciences<br />
      Lab: (850) 645-8815<br />
      <a href="mailto:mcginnis@bio.fsu.edu"> E-mail: mcginnis@bio.fsu.edu</a></p>
-  <div align="middle"><img src="./attach/2.png"></div>
+  <div align="middle">
+    <noscript data-src="./attach/2.png">
+      <img src="./attach/2.png" alt="" data-src="">
+    </noscript>
+  </div>
 
 </div>
 </div>
@@ -221,23 +232,8 @@ AC155377.1_FG001"></textarea></div>
   var str20= 'Right click to save as tsv file [size: {0}]';
   var str21= 'No result or error!';
   var str22= 'Export all data as SIF file';
-  var str23= 'Double click gene ID/ tissue to show Venn diagram; double click number to show IDs';
+  var str23= 'Double click ID/tissue to show Venn diagram; double click number to show IDs';
   var str24= 'Double click intersection to show IDs';
-
-  $('.nav_tab').on('click', function(e){
-    if($('#nav-toggle').is(':visible')) {$('nav ul').toggle()}
-    var tab_id = $(this).attr('id');
-    $('nav li').removeClass('active');
-    $('.content').removeClass('active');
-    $(this).parent().addClass('active');
-    $("#p"+tab_id).addClass('active');
-    $('#msg').html('');
-    return false;
-  })
-  $('#nav-toggle').on('click', function() {
-    $('nav ul').toggle()
-  })
-
 </script>
 <script type="text/javascript" count="<?php echo isset($_GET['d'])?$_GET['d']:'55';?>" src="./js/canvas-nest.min.js"></script>
 <script type="text/javascript" src="./js/d3.v4.min.js"></script>

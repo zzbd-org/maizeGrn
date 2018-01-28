@@ -10,7 +10,7 @@
 * --------------------------------- */
 body{font-size:14px;font-family:Arial,sans-serif;color:#000000;background-color:#ffffff;}
 *{padding:0;margin: 0;outline:none;}
-a{color:#782f40;text-decoration:none;}
+a{color:#782f40;text-decoration:none;white-space:nowrap;}
 a:hover{color:#333333;text-decoration:underline;}
 o{color:#782f40;font-size:20px;font-weight:600;font-family:serif;}
 hr{margin:.7em 0;border-top:1px dashed #d0d0d0;border-bottom:1px dashed #f9f9f9;}
@@ -41,7 +41,7 @@ blockquote p{margin:0;padding:.5em 0;}
 .listing-item time{color:#999999;}
 .listing-seperator{font-weight:bold;}
 .meta{text-align:right;font-size:12px;}
-header{padding:1.5em 0;border-bottom: 1px solid #cccccc;text-align:center;border-radius:2px;}
+header{padding:1em 0;border-bottom: 1px solid #cccccc;text-align:center;border-radius:2px;}
 header img{float:left;margin-left:-160px;margin-top:-20px;border:none;}
 nav{font-family:sans-serif;font-size:1.2em;float:left;margin:1.6em 0 0 -11em;width:7em;}
 nav ul{direction:rtl;list-style-position:outside;list-style:none;}
@@ -56,20 +56,20 @@ h4{font-family:Courier New,sans-serif;font-size:1em;color:#333;}
 body h2{margin:1em 0;}
 form{font-size:0;}
 .form-control{display:inline-block;vertical-align:top;width:50%;font-size:medium;box-sizing:border-box;}
-fieldset,textarea{border-radius:3px;}
+fieldset,textarea{border-radius:3px;padding:0 0 0 5px;}
 textarea{display:block;height:135px;overflow:auto;width:300px;border:1px solid #ccc;box-shadow:inset 0 1px 1px rgba(0,0,0,.075);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
 textarea:focus{border-color:#782f40;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(120,47,64,.6);}
 input{margin:0 3px;}
-input[name=s_num]{max-width:30px;border:none;border-bottom:2px solid;}
+input[name=s_num]{max-width:34px;border:none;border-bottom:2px solid;}
 pre,code{font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,monospace;font-size:13px;}
 code{background-color:#ccc;}
 embed,object,iframe{display:block;margin:4px auto;}
-.bg{position:absolute;left:0;right:0;z-index:-1;text-align:center;line-height:135px;color:#ccc;font-family:Arial black;opacity:.5;font-size:x-large;background-color:white;}
+.bg{position:absolute;left:0;right:0;z-index:-1;text-align:center;line-height:135px;color:#ccc;font-family:Arial black;opacity:.5;font-size:x-large;}
 .rpanel{min-height:130px;}
 #venn{border-top:2px dashed gray;margin-top:10px;padding-top:5px;}
 .venntooltip{position:absolute;text-align:center;width:128px;height:16px;background:#333;color:#ddd;padding:2px;border:0px;border-radius:8px;opacity:0;}
 #genebox{display:none;float:right;position:relative;}
-#genebox>textarea{border:2px solid;border-bottom:none;display:inherit;background-color:transparent;}
+#genebox>textarea{width:310px;border:2px solid;border-bottom:none;display:inherit;background-color:transparent;}
 #genebox>button{width:100%;}
 #genebox>.bg:after{content:"Gene ID";}
 #msg{position:fixed;bottom:0;right:0;width:250px;max-height:300px;word-wrap:break-word;}
@@ -78,7 +78,7 @@ embed,object,iframe{display:block;margin:4px auto;}
 .b2t>a:hover{color:#fff;}
 .b2t span:before{content:"\25B2";}
 .b2t.b2t-on{bottom:30px;}
-#warn{margin-top:-2em;text-align:center;background-color:yellow;line-height:2;}
+#warn{text-align:center;background-color:yellow;line-height:2;}
 .gist{font-size: 12px;line-height:1.6;}
 #footer{background-color:#333;text-align:center;margin-top:20px;}
 #footer p{color:#999;font-size:12px;}
