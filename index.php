@@ -60,7 +60,7 @@ if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot')
 <div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='b'?' active':'';?>" id="p_b">
   <form action="api.php" method="POST">
     <div class="form-control"><label for="key">Gene ID(comma/space/new line)<a href=# onclick="$('#key').val('GRMZM2G017087,GRMZM2G015534,GRMZM2G133331');">demo</a>:</label><br />
-    <textarea id="key" row="8" cols="50" name="s_key" type="text" placeholder="AC149829.2_FG004
+    <textarea id="key" name="s_key" placeholder="AC149829.2_FG004
 GRMZM2G135052"></textarea></div>
     <div class="form-control" style="padding-left:0.9em;vertical-align:bottom;">
     <fieldset>
@@ -77,7 +77,7 @@ GRMZM2G135052"></textarea></div>
     <div class="form-control" style="margin-top: 0.9em;padding-right:1.5em;">
       <fieldset>
       <legend>Optional sets:</legend>
-      <label><input type="radio" name="s_flag" value="0" checked="checked" /><b>Summary</b> with gene ID only</label><br />
+      <label><input type="radio" name="s_flag" value="0" checked="checked" /><b>Summary</b> with gene IDs only</label><br />
       <label><input type="radio" name="s_flag" value="1" /><b>Top <input name="s_num" type="number" value="<?php echo ELIMIT;?>" min="3" max="99" step="3" /> hits</b> each gene with detail</label><br />
       <label><input type="radio" name="s_flag" value="3" /><b>TSV file</b> with all information</label><br />
     </fieldset></div>
@@ -139,7 +139,7 @@ GRMZM2G135052"></textarea></div>
 <div class="content<?php echo isset($_GET['t'])&&$_GET['t']=='d'?' active':'';?>" id="p_d">
   <form action="api.php" method="POST">
     <div class="form-control"><label>ID convert between v3 and v4:</label><br />
-    <textarea row="8" cols="50" name="s_key" type="text" placeholder="AC149829.2_FG004
+    <textarea placeholder="AC149829.2_FG004
 AC155377.1_FG001"></textarea></div>
     <div class="form-control" style="padding:1em 0 0 0.9em;">
       <fieldset>
@@ -239,7 +239,7 @@ AC155377.1_FG001"></textarea></div>
   })
 
 </script>
-<script type="text/javascript" count="<?php echo isset($_GET['d'])?$_GET['d']:'99';?>" src="./js/canvas-nest.min.js"></script>
+<script type="text/javascript" count="<?php echo isset($_GET['d'])?$_GET['d']:'55';?>" src="./js/canvas-nest.min.js"></script>
 <script type="text/javascript" src="./js/d3.v4.min.js"></script>
 <script type="text/javascript" src="./js/venn.js"></script>
 <script type="text/javascript" src="./js/main.min.js"></script>

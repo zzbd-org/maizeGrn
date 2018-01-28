@@ -14,17 +14,16 @@ a{color:#782f40;text-decoration:none;}
 a:hover{color:#333333;text-decoration:underline;}
 o{color:#782f40;font-size:20px;font-weight:600;font-family:serif;}
 hr{margin:.7em 0;border-top:1px dashed #d0d0d0;border-bottom:1px dashed #f9f9f9;}
-p{padding:.5em 0;}
+p,.post{padding:.5em 0;}
 li.active{list-style:circle;}
 ol, ul{list-style-position:inside;}
 ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
 table{border-collapse:collapse;text-align:left;line-height:28px;border-left:1px solid black;margin-top:15px;}
 thead th,tbody th,body td {border-left:inherit;border-right:1px solid black;padding-right:6px;padding-left:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:200px}
-thead th{border-bottom:2px solid black}
 #fullscm{position:absolute;left:5px;right:5px;text-align:center;}
 #fullscm>table{display:inline-block;margin:10px 0;background-color:white;}
 #fullscm>table tr{border-top:1px solid;}
-#fullscm>table tbody{border-bottom:2px solid;}
+#fullscm>table tbody,thead th{border-bottom:2px solid;}
 #stbl{border-left:none;}
 #stbl th, #stbl td{cursor:pointer;}
 pre code{margin:1em 0;font-size:13px;line-height:1.6;display:block;overflow:auto;}
@@ -42,7 +41,7 @@ blockquote p{margin:0;padding:.5em 0;}
 .listing-item time{color:#999999;}
 .listing-seperator{font-weight:bold;}
 .meta{text-align:right;font-size:12px;}
-header{padding:1.5em 0;border-bottom: 1px solid #cccccc;text-align:center;}
+header{padding:1.5em 0;border-bottom: 1px solid #cccccc;text-align:center;border-radius:2px;}
 header img{float:left;margin-left:-160px;margin-top:-20px;border:none;}
 nav{font-family:sans-serif;font-size:1.2em;float:left;margin:1.6em 0 0 -11em;width:7em;}
 nav ul{direction:rtl;list-style-position:outside;list-style:none;}
@@ -50,7 +49,6 @@ nav a{display:block;padding:.7em .5em;font-weight:bolder;color:#000000;}
 nav a:hover{background-color:#782f40;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;transition:color .2s linear;}
 #nav-toggle{display:none;line-height:inherit;margin:0;padding:4px 10px;border:1px solid black;border-radius: 2px;background-color:transparent;cursor:pointer;}
 #nav-toggle:hover{background-color:#9E9E9E;}
-.post{padding:.5em 0em;}
 h1{font-family:Georgia,Garamond,sans-serif;font-size:1.6em;color:#000;}
 h2{font-family:Lucida Console,Courier New,sans-serif;font-size:1.4em;color:#111;}
 h3{font-family:Tahoma,Lucida Sans Unicode,sans-serif;font-size:1.1em;color:#222;}
@@ -58,6 +56,7 @@ h4{font-family:Courier New,sans-serif;font-size:1em;color:#333;}
 body h2{margin:1em 0;}
 form{font-size:0;}
 .form-control{display:inline-block;vertical-align:top;width:50%;font-size:medium;box-sizing:border-box;}
+fieldset,textarea{border-radius:3px;}
 textarea{display:block;height:135px;overflow:auto;width:300px;border:1px solid #ccc;box-shadow:inset 0 1px 1px rgba(0,0,0,.075);transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
 textarea:focus{border-color:#782f40;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(120,47,64,.6);}
 input{margin:0 3px;}
@@ -65,13 +64,16 @@ input[name=s_num]{max-width:30px;border:none;border-bottom:2px solid;}
 pre,code{font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,monospace;font-size:13px;}
 code{background-color:#ccc;}
 embed,object,iframe{display:block;margin:4px auto;}
+.bg{position:absolute;left:0;right:0;z-index:-1;text-align:center;line-height:135px;color:#ccc;font-family:Arial black;opacity:.5;font-size:x-large;background-color:white;}
 .rpanel{min-height:130px;}
+#venn{border-top:2px dashed gray;margin-top:10px;padding-top:5px;}
 .venntooltip{position:absolute;text-align:center;width:128px;height:16px;background:#333;color:#ddd;padding:2px;border:0px;border-radius:8px;opacity:0;}
-#genebox{display:none;float:right;}
-#genebox>textarea{border:2px solid;border-bottom:none;display:inherit;}
+#genebox{display:none;float:right;position:relative;}
+#genebox>textarea{border:2px solid;border-bottom:none;display:inherit;background-color:transparent;}
 #genebox>button{width:100%;}
+#genebox>.bg:after{content:"Gene ID";}
 #msg{position:fixed;bottom:0;right:0;width:250px;max-height:300px;word-wrap:break-word;}
-.b2t{box-sizing:border-box;position:fixed;z-index:1050;opacity:0.6;cursor:pointer;text-align:center;background-color:#782f40;right:30px;bottom:-100px;-webkit-transform:translateZ(0);transition:bottom 0.2s ease-in-out 0s;}
+.b2t{box-sizing:border-box;position:fixed;z-index:1050;opacity:.6;cursor:pointer;text-align:center;background-color:#782f40;right:30px;bottom:-100px;-webkit-transform:translateZ(0);transition:bottom .2s ease-in-out 0s;}
 .b2t>a{color:#fff;text-decoration:none;padding:0 6px;}
 .b2t>a:hover{color:#fff;}
 .b2t span:before{content:"\25B2";}
