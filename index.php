@@ -2,7 +2,7 @@
 include 'config.php';
 $cookie_name = 'check';
 $file = 'count.log';
-$count = strval(file_get_contents($file));
+$count = intval(file_get_contents($file));
 if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot') === false) {
     file_put_contents($file, ++$count);
     setcookie($cookie_name, "Visited", time() + 100000);
