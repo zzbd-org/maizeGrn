@@ -69,7 +69,7 @@ if (!isset($_COOKIE[$cookie_name]) && strpos($_SERVER["HTTP_USER_AGENT"], 'bot')
 GRMZM2G135052"></textarea></div>
     <div class="form-control" style="padding-left:0.9em;vertical-align:bottom;">
     <fieldset>
-      <legend>Tissue and Pattern(needed):</legend>
+      <legend>Tissue and Pattern(required):</legend>
       <label><input type="checkbox" name="leaf" value="1" />leaf</label><br />
       <label><input type="checkbox" name="root" value="1" />root</label><br />
       <label><input type="checkbox" name="SAM" value="1" />shoot apical meristem(SAM)</label><br />
@@ -81,7 +81,7 @@ GRMZM2G135052"></textarea></div>
   
     <div class="form-control" style="margin-top: 0.9em;padding-right:1.1em;">
       <fieldset>
-      <legend>Optional sets:</legend>
+      <legend>Optional setting:</legend>
       <label><input type="radio" name="s_flag" value="0" checked="checked" /><b>Summary</b> with gene IDs only</label><br />
       <label><input type="radio" name="s_flag" value="1" /><b>Top <input name="s_num" type="number" value="<?php echo ELIMIT;?>" min="3" max="99" step="3" />hits</b> each gene with detail</label><br />
       <label><input type="radio" name="s_flag" value="3" /><b>TSV file</b> with all information</label><br />

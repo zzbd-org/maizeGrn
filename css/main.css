@@ -25,12 +25,14 @@ thead th,tbody th,body td {border-left:inherit;border-right:1px solid black;padd
 #fullscm>table tr{border-top:1px solid;}
 #fullscm>table tbody,thead th{border-bottom:2px solid;}
 #stbl{border-left:none;}
-#stbl th, #stbl td{cursor:pointer;}
+#stbl>thead th:not(:first-child):hover, #stbl>tbody th:hover, #stbl td:hover, .dlk:hover{background-color:#782f40;color:#fff;}
+.dlk{cursor:alias;}
 pre code{margin:1em 0;font-size:13px;line-height:1.6;display:block;overflow:auto;}
 blockquote{display:block;text-align:justify;border-left:4px solid #eeeeee;}
 blockquote{margin:1em 0em;padding-left:1.5em;}
 blockquote p{margin:0;padding:.5em 0;}
 #container{width:650px;margin:2em auto;display:block;padding:0 2em;border-left:3px solid #782f40;}
+#container{margin:0 11em \9;}
 .content{font-size:16px;line-height:24px;display:none;min-height:350px;padding-top:1em;}
 .content.active{display:block;}
 .content h1{padding:.5em 0;}
@@ -73,9 +75,9 @@ embed,object,iframe{display:block;margin:4px auto;}
 #genebox>button{width:100%;}
 #genebox>.bg:after{content:"Gene ID";}
 #msg{position:fixed;bottom:0;right:0;width:250px;max-height:300px;word-wrap:break-word;}
-.b2t{box-sizing:border-box;position:fixed;z-index:1050;opacity:.6;cursor:pointer;text-align:center;background-color:#782f40;right:30px;bottom:-100px;-webkit-transform:translateZ(0);transition:bottom .2s ease-in-out 0s;}
-.b2t>a{color:#fff;text-decoration:none;padding:0 6px;}
-.b2t>a:hover{color:#fff;}
+.b2t{box-sizing:border-box;position:fixed;z-index:1050;opacity:.6;text-align:center;background-color:#782f40;right:30px;bottom:-100px;-webkit-transform:translateZ(0);transition:bottom .2s ease-in-out 0s;}
+.b2t>a{color:#fff;text-decoration:none;padding:0 6px;cursor:pointer;}
+.b2t:hover{opacity:1;}
 .b2t span:before{content:"\25B2";}
 .b2t.b2t-on{bottom:30px;}
 #warn{text-align:center;background-color:yellow;line-height:2;}
@@ -100,7 +102,7 @@ button{display:inline-block;position:relative;line-height:2;padding:0 20px;margi
 button:hover{border-color:#222;background-color:#222;color:#fff !important;}
 button:before{content:"";position:absolute;top:50%;left:50%;display:block;width:0;padding-top:0;border-radius:100%;background-color:rgba(236,240,241,.3);-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
 button:active:before{width:120%;padding-top:120%;transition:width .2s ease-out,padding-top .2s ease-out}
-button.hl.fa:after{content:" \2B8B";font-weight:600}
+button.hl.fa:after{content:" \2913";font-weight:600}
 button.hl{border-color:#782f40;color:#782f40}
 button.hl:hover{border-color:#782f40;background-color:#782f40}
 button.red{border-color:#e74c3c}

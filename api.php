@@ -13,7 +13,7 @@ define("QUERY4", '(SELECT a.%s,a.%s,a.ca,COALESCE(b.description,"-")
 FROM idconv AS a
 LEFT JOIN v4func AS b ON a.v4=b.v4
 WHERE a.%s ORDER by a.%s)');
-define("QUERY_TITLE", "%s\t%s\tSymbol\tChr.\t5'position\t3'position\tdescription\tA. thaliana\tprotein\tsummary\tdescribe");
+define("QUERY_TITLE", "%s\t%s\tSymbol\tChr.\t5'position\t3'position\tDescription\tA. thaliana\tProtein\tSummary\tDescribe");
 define("CONV_TITLE", "%s ID\t%s ID\ttype%s");
 
 global $query;
